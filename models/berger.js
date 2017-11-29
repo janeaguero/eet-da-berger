@@ -10,8 +10,7 @@ var berger = {
 
 	create: function(name, cb) {
 		orm.create("bergers", [
-
-		"berger_nom", "devoured"
+			"berger_nom", "devoured"
 		], [
 			name, false
 		], cb);
@@ -19,7 +18,7 @@ var berger = {
 
 	update: function(id, cb) {
 		var condition = "id=" + id;
-		orm.update("burgers", {
+		orm.update("bergers", {
 			devoured: true
 		}, condition, cb);
 	}

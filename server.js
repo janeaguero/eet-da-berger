@@ -12,7 +12,7 @@ var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main "}));
 app.set("view engine", "handlebars");
 
-var routes = require("./controllers/berger-control.js");
+var routes = require("/controllers/bergers_controller.js");
 
 app.use("/", routes);
 app.use("/update", routes);
