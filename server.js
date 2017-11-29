@@ -9,10 +9,10 @@ app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({ extended: false }));
 var exphbs = require("express-handlebars");
 
-app.engine("handlebars", exphbs({ defaultLayout: "main "}));
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-var routes = require("/controllers/bergers_controller.js");
+var routes = require("./controllers/bergers_controller.js");
 
 app.use("/", routes);
 app.use("/update", routes);

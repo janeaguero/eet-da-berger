@@ -57,8 +57,8 @@
 	<div class="row">
 		<div class="col-sm-12 text-center">
 			<p>Enter the name of a burger you want to devour, then click Submit.</p>
-			<form>
-				<input type="text" class="form-control" name="berger-nom" value="" id="text-entry">
+			<form action="/bergers/create" method="POST">
+				<input type="text" class="form-control" name="berger-nom" value=" " id="text-entry">
 				<button type="submit" class="btn btn-primary" id="submit-btn"><span class="glyphicon glyphicon-piggy-bank"></span>Submit</button>
 			</form>
 		</div> 
