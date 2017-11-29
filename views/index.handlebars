@@ -1,0 +1,66 @@
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12 text-center" id="header">
+			<img src="/assets/images/berger-pic.jpeg">
+			<h1>eet dis berger</h1>
+		</div>
+		<div class="col-lg-12 text-center" id="">
+			<div class="row">
+
+				<div class="col-lg-6">
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3 class="panel-title">Desired Burgers<span clas="glyphicon glyphicon-heart"></span></h3>
+						</div>
+						<div class="list-group">
+							<!-- listed items are in <a> tags -->
+							{{#each bergers}}
+								{{#unless this.devoured}}
+									<div class="col-xs-9">
+										<pre>{{this.id}}. {{this.berger_nom}}</pre>
+									</div>
+									<div class="col-xs-3">
+										<form method="POST" action="/burger/update?_method=PUT" class="button-size">
+											<input input type="hidden" type="text" name="berger_id" value={{this.id}}>
+											<br>
+											<button type="submit" class="btn btn-default">Devour Me!</button>
+										</form>
+									</div>
+								{{/unless}}
+							{{/each}}
+						</div>
+					</div>	
+				</div>
+				
+				<div class="col-lg-6">
+					<div class="panel panel-warning">
+						<div class="panel-heading">
+							<h3 class="panel-title">Devoured Burgers<span clas="glyphicon glyphicon-fire"></span></h3>
+						</div>
+						<ul class="list-group">
+							<!-- in <li> tags -->
+							{{#each berger_data}}
+								{{#if this.devoured}}
+									<li class="list-group-item">{{this.id}}. {{this.berger_nom}}</li>
+								{{/if}}
+							{{/each}}
+						</ul>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12 text-center">
+			<p>Enter the name of a burger you want to devour, then click Submit.</p>
+			<form>
+				<input type="text" class="form-control" name="berger-nom" value="" id="text-entry">
+				<button type="submit" class="btn btn-primary" id="submit-btn"><span class="glyphicon glyphicon-piggy-bank"></span>Submit</button>
+			</form>
+		</div> 
+	</div>
+</div>
